@@ -1,0 +1,85 @@
+8
+
+dir
+1532
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm
+
+
+
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+
+svn:special svn:externals svn:needs-lock
+
+UIKit+AFNetworking
+dir
+
+ImagePicker
+dir
+
+MBProgressHUD
+dir
+
+MJPhotoBrowser
+dir
+
+ZXPUnicode
+dir
+
+Masonry
+dir
+
+NickyLocalImagePicker
+dir
+
+AFNetworking
+dir
+
+BaseViewController.h
+file
+
+
+
+
+2016-12-06T05:25:19.000000Z
+7c257aaf2062d36649dc81506a89a0d1
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+NJKWebViewProgress
+dir
+
+Reachability
+dir
+
+SDCycleScrollView
+dir
+
+EGORefreshTable
+dir
+
+BaseViewController.m
+file
+
+
+
+
+2016-12-07T02:31:52.000000Z
+f23757be2105b74ccb7591e2f41efeea
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+SDWebImage
+dir
+
+SVProgressHUD
+dir
+
+StarRating
+dir
+

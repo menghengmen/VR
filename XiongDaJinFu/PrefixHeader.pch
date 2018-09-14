@@ -1,0 +1,163 @@
+//
+//  PrefixHeader.pch
+//  XiongDaJinFu
+//
+//  Created by roomBlin on 16/10/13.
+//  Copyright © 2016年 roomBlin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "AppDelegate.h"
+#import "SVProgressHUD.h"
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
+#import "NetworkClient.h"
+#import "QuartzCore/QuartzCore.h"
+#import "NSData+Base64.h"
+#import "Header.h"
+#import "LoginViewController.h"
+#import "MBProgressHUD.h"
+#import "UIColor+Hex.h"
+#import "GlobalObject.h"
+#import "XDCommonTool.h"
+#import <QiniuSDK.h>
+#import <FMDB.h>
+#import "XYCustomStatusbar.h"
+#import "YJItemView.h"
+#import <AFNetworking.h>
+#import "CustomActionSheetView.h"
+#import "Header.h"
+#import "BaseViewController.h"
+#import "AFNetworking.h"
+#import "ESConst.h"
+#import "ESWebService.h"
+#import "LxDBAnything.h"
+#import "loginViewController.h"
+#import "HWPopTool.h"
+#import "BMChineseSort.h"
+#import "searchUniversityView.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//全局的url
+#define globalURL  @""
+
+//判断是否登录
+#define kIsLogin  @"isLogin"
+//rgb颜色设置
+#define RGB(r, g, b)                        [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define BASE_API_URL @""///////////////////////
+#define IMAGE_API_URL @""//////////////////////
+
+#define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define FONT_SIZE APPDELEGATE.fontSize
+#define PLACEHOLDER_IMAGE [UIImage imageNamed:@"默认头像"]
+
+
+#define SCREEN_WIDTH_RATE (375/[UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT_RATE (667/[UIScreen mainScreen].bounds.size.height)
+
+
+#define IS_IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+#define IS_IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8)
+
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_MAIN [UIScreen mainScreen].bounds.size
+#define ContentViewWidth self.contentView.frame.size.width
+#define ContentViewHeight self.contentView.frame.size.height
+#define RGB_COLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define HEXCOLOR(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:1]
+
+#define RGB_NAV_COLOR RGB_COLOR(212, 81, 72, 1)//常用的通用颜色
+
+
+#define PHOTOMAX_NUMBER 4
+
+// 随机色
+#define RandomColor BXColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define IOSVersion                          [[[UIDevice currentDevice] systemVersion] floatValue]
+#define IsiOS7Later                         !(IOSVersion < 7.0)
+//// 合作商户ID。用签约支付宝账号登录ms.alipay.com后，在账户信息页面获取。
+//static NSString *PARTNER  =  @"2088701421932441";
+//// 商户收款的支付宝账号
+//static NSString *SELLER   =  @"nj_dobado@163.com";
+
+
+//弱引用/强引用  可配对引用在外面用MPWeakSelf(self)，block用MPStrongSelf(self)  也可以单独引用在外面用MPWeakSelf(self) block里面用weakself
+#define MPWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define MPStrongSelf(type)  __strong typeof(type) type = weak##type;
+
+
+//weak strong 用在block里面
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
+
+//设置RGB颜色/设置RGBA颜色
+
+#define LRRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define LRRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
+
+
+//自定义log
+#ifdef DEBUG
+#define LRLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define LRLog(...)
+#endif
+
+
+#define kBacColor YJColor(246, 247, 248)
+#define KRedColor YJColor(255,0,0)
+#define kGreenColor YJColor(107, 185, 91)
+#define kFontRedColor YJColor(235, 128, 32)
+#define kThisGreenColor YJColor(107, 185, 91)
+#define kThisWhiteColor [UIColor colorWithHexString:@"#FFFFFF"]
+#define kThisRedColor YJColor(255, 102, 0)
+#define kThisGrayColor YJColor(204, 204, 204)
+
+
+#define c1 [UIColor colorWithHexString:@"#EEAFE1"]
+#define c2 [UIColor colorWithHexString:@"#F6E8A4"]
+#define c3 [UIColor colorWithHexString:@"#9EDDF9"]
+#define c4 [UIColor colorWithHexString:@"#F5AB8D"]
+
+#define LabelBorderColor1 [UIColor colorWithHexString:@"EF5EC0"]
+#define LabelBorderColor2 [UIColor colorWithHexString:@"F6CF53"]
+#define LabelBorderColor3 [UIColor colorWithHexString:@"38BDF9"]
+#define LabelBorderColor4 [UIColor colorWithHexString:@"F78252"]
+
+
+#endif /* PrefixHeader_pch */

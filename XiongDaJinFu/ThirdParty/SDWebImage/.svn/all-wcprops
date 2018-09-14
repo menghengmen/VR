@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage
+END
+MKAnnotationView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/MKAnnotationView+WebCache.h
+END
+SDImageCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDImageCache.h
+END
+SDWebImageDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDecoder.h
+END
+MKAnnotationView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/MKAnnotationView+WebCache.m
+END
+SDImageCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDImageCache.m
+END
+SDWebImageDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDecoder.m
+END
+SDWebImageManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageManager.h
+END
+UIButton+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIButton+WebCache.h
+END
+SDWebImageManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageManager.m
+END
+SDWebImageDownloaderOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDownloaderOperation.h
+END
+UIImageView+WebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImageView+WebCache.h
+END
+UIImage+WebP.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+WebP.h
+END
+UIButton+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIButton+WebCache.m
+END
+SDWebImageDownloaderOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDownloaderOperation.m
+END
+UIImageView+WebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImageView+WebCache.m
+END
+UIImage+WebP.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+WebP.m
+END
+NSData+ImageContentType.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/NSData+ImageContentType.h
+END
+SDWebImageDownloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDownloader.h
+END
+UIView+WebCacheOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIView+WebCacheOperation.h
+END
+NSData+ImageContentType.m
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/NSData+ImageContentType.m
+END
+SDWebImageDownloader.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageDownloader.m
+END
+UIView+WebCacheOperation.m
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIView+WebCacheOperation.m
+END
+UIImageView+HighlightedWebCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImageView+HighlightedWebCache.h
+END
+SDWebImageCompat.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageCompat.h
+END
+UIImageView+HighlightedWebCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImageView+HighlightedWebCache.m
+END
+UIImage+MultiFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+MultiFormat.h
+END
+SDWebImagePrefetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImagePrefetcher.h
+END
+SDWebImageCompat.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageCompat.m
+END
+UIImage+GIF.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+GIF.h
+END
+UIImage+MultiFormat.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+MultiFormat.m
+END
+SDWebImagePrefetcher.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImagePrefetcher.m
+END
+UIImage+GIF.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/UIImage+GIF.m
+END
+SDWebImageOperation.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/mdjrdsptxm/!svn/ver/1532/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/SDWebImage/SDWebImageOperation.h
+END

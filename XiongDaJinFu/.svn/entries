@@ -1,0 +1,236 @@
+8
+
+dir
+1532
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm/ios/trunk/XiongDaJinFu/XiongDaJinFu
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm
+
+
+
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+
+svn:special svn:externals svn:needs-lock
+
+PrefixHeader.pch
+file
+
+
+
+
+2016-12-08T12:39:36.000000Z
+091626f7aa6b4377de502d11d51e3390
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+HomePageViewController.m
+file
+
+
+
+
+2016-12-09T01:03:40.000000Z
+933d6a3fbd93655e96727d2a7b9ae60c
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+main.m
+file
+
+
+
+
+2016-10-13T02:34:17.000000Z
+86ad331970d53bb62e014438970b406e
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+YJItemView.h
+file
+
+
+
+
+2016-12-08T01:25:25.000000Z
+3ed993c1b679f4c3adfcfdfba731a1cd
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+CustomActionSheetView.h
+file
+
+
+
+
+2016-12-02T01:36:43.000000Z
+815d17bff7420d6f59a4826c1fdd52c3
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+GlobalObject.m
+file
+
+
+
+
+2016-12-01T07:16:23.000000Z
+0bd2ee9af215b94cfd951838f828942f
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+首页
+dir
+
+Info.plist
+file
+
+
+
+
+2016-12-05T02:38:10.000000Z
+bc47a84045e7ed2073aaf22d7fc7ff53
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+YJItemView.m
+file
+
+
+
+
+2016-12-08T08:27:58.000000Z
+bf8edb6f8028f49fc9cebd8322a0b3bb
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+CustomActionSheetView.m
+file
+
+
+
+
+2016-12-02T01:36:24.000000Z
+feb53914ea8ee2b2e5356732a0f5fefe
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+NetworkClient
+dir
+
+ThirdParty
+dir
+
+Assets.xcassets
+dir
+
+Base.lproj
+dir
+
+AppDelegate.h
+file
+
+
+
+
+2016-10-13T02:35:32.000000Z
+9f361c9f5d9247f63c87f177020f5fba
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+ViewControllers
+dir
+
+AppDelegate.m
+file
+
+
+
+
+2016-12-02T03:46:17.000000Z
+165fadda2d116bf3b028952225320b66
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+XDCommonTool.h
+file
+
+
+
+
+2016-12-06T06:06:33.000000Z
+756cb5be9979f8030d287749a69cf2fd
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+LoginAndRegist
+dir
+
+HomePageViewController.h
+file
+
+
+
+
+2016-12-02T01:26:19.000000Z
+11008ce5266a7525db1a9cca6f6c56f0
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+GlobalObject.h
+file
+
+
+
+
+2016-12-01T07:21:33.000000Z
+0314b3eb0f4c0bcba3b6afa1c47ae0f8
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+Category
+dir
+
+XDCommonTool.m
+file
+
+
+
+
+2016-12-06T06:27:04.000000Z
+615f82552096138ab2848f0f0b32ccd9
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+Header.h
+file
+
+
+
+
+2016-12-08T12:43:08.000000Z
+3c0e0b422d3981fe72d6dfb5d4157073
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+

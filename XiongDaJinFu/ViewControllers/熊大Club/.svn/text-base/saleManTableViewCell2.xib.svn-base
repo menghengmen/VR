@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="KGk-i7-Jjw" customClass="saleManTableViewCell2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEp-qS-3p8">
+                        <rect key="frame" x="0.0" y="36" width="80" height="59.5"/>
+                        <color key="backgroundColor" red="1" green="0.77234185952084344" blue="0.4123244002837273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="提成统计" image="提成统计.png"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZI-an-rMi">
+                        <rect key="frame" x="80" y="36" width="80" height="62"/>
+                        <color key="backgroundColor" red="0.2311267931310369" green="1" blue="0.17610424784085454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU0-K6-A21">
+                        <rect key="frame" x="160" y="36" width="80" height="62"/>
+                        <color key="backgroundColor" red="1" green="0.30440952620537109" blue="0.11375620875637993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3W-SW-Fug">
+                        <rect key="frame" x="240" y="36" width="80" height="62"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="U3W-SW-Fug" firstAttribute="leading" secondItem="oU0-K6-A21" secondAttribute="trailing" id="02y-L7-Wan"/>
+                    <constraint firstAttribute="bottom" secondItem="oU0-K6-A21" secondAttribute="bottom" constant="16" id="1l6-8e-iC9"/>
+                    <constraint firstItem="oU0-K6-A21" firstAttribute="leading" secondItem="yZI-an-rMi" secondAttribute="trailing" id="1pm-3M-jLw"/>
+                    <constraint firstItem="oU0-K6-A21" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="5KX-UX-6SY"/>
+                    <constraint firstItem="TEp-qS-3p8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="6WI-dW-r6a"/>
+                    <constraint firstItem="U3W-SW-Fug" firstAttribute="width" secondItem="TEp-qS-3p8" secondAttribute="width" id="9Tr-HY-Thg"/>
+                    <constraint firstItem="yZI-an-rMi" firstAttribute="width" secondItem="TEp-qS-3p8" secondAttribute="width" id="ORh-4b-RWq"/>
+                    <constraint firstAttribute="trailing" secondItem="U3W-SW-Fug" secondAttribute="trailing" id="Q3I-JY-ImQ"/>
+                    <constraint firstItem="TEp-qS-3p8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TXn-PF-qxd"/>
+                    <constraint firstItem="yZI-an-rMi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="Zc9-m9-6iN"/>
+                    <constraint firstItem="oU0-K6-A21" firstAttribute="width" secondItem="TEp-qS-3p8" secondAttribute="width" id="ZnJ-XT-Olh"/>
+                    <constraint firstItem="U3W-SW-Fug" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="hKI-bR-i3i"/>
+                    <constraint firstItem="yZI-an-rMi" firstAttribute="leading" secondItem="TEp-qS-3p8" secondAttribute="trailing" id="nm5-vv-cX4"/>
+                    <constraint firstAttribute="bottom" secondItem="U3W-SW-Fug" secondAttribute="bottom" constant="16" id="w4c-5a-Dps"/>
+                    <constraint firstAttribute="bottom" secondItem="TEp-qS-3p8" secondAttribute="bottom" constant="18" id="w6m-G7-Qri"/>
+                    <constraint firstAttribute="bottom" secondItem="yZI-an-rMi" secondAttribute="bottom" constant="16" id="yNd-CF-8Dl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="saleManBtn1" destination="TEp-qS-3p8" id="Tax-00-dhD"/>
+                <outlet property="saleManBtn2" destination="yZI-an-rMi" id="y4k-Ch-lkd"/>
+                <outlet property="saleManBtn3" destination="oU0-K6-A21" id="twL-1v-KPj"/>
+                <outlet property="saleManBtn4" destination="U3W-SW-Fug" id="wFL-u3-svG"/>
+            </connections>
+            <point key="canvasLocation" x="39" y="153"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="提成统计.png" width="80" height="80"/>
+    </resources>
+</document>

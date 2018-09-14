@@ -1,0 +1,112 @@
+//
+//  messageViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/8.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "messageViewController.h"
+#import "YJPersonInfoCell.h"
+@interface messageViewController ()<YJPersonInfoCellDelegate>
+@property (nonatomic, strong) NSMutableArray *nameArray;
+
+@end
+
+@implementation messageViewController
+
+- (NSMutableArray *)nameArray
+{
+    if (!_nameArray) {
+        NSMutableArray *a1 = [NSMutableArray arrayWithArray:@[@"账号",@"昵称"]];
+        NSMutableArray *a2 = [NSMutableArray arrayWithArray:@[@"真实姓名",@"性别", @"手机" ]];
+        NSMutableArray *a3 = [NSMutableArray arrayWithArray:@[@"所在地区",@"详细地址",@"支付宝账号"]];
+        
+        NSArray *arr = @[a1, a2, a3];
+        _nameArray = [NSMutableArray arrayWithArray:arr];
+    }
+    return _nameArray;
+}
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    [self setUpNewNai:@"返回" Title:@"个人资料"];
+    
+    // Do any additional setup after loading the view from its nib.
+}
+
+
+
+
+#pragma mark- UITableViewDataSource, UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    return self.nameArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.nameArray[section] count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    YJPersonInfoCell *cell = [YJPersonInfoCell personInfoCellWithTableView:tableView];
+    cell.delegate = self;
+    //cell左边的数据
+    NSArray *arr = self.nameArray[indexPath.section];
+    cell.name.text = arr[indexPath.row];
+    [cell.name setTextColor:[UIColor colorWithHexString:@"4d4d4d"]];
+
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 44;
+    }
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 4;
+}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

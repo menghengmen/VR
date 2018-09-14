@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="664" id="KGk-i7-Jjw">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="669"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="668.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdP-oP-Loe">
+                        <rect key="frame" x="20" y="30" width="9" height="29.5"/>
+                        <state key="normal" image="icon_back"/>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cO6-ZV-LcH"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peo-37-TGU">
+                        <rect key="frame" x="91" y="23" width="197" height="42.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帝国理工大学" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoL-VC-Yhg">
+                                <rect key="frame" x="0.0" y="0.0" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imperial College LonDon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-mJ-JwF">
+                                <rect key="frame" x="0.0" y="21" width="197" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cha-mJ-JwF" firstAttribute="top" secondItem="OoL-VC-Yhg" secondAttribute="bottom" id="4HY-OU-VGY"/>
+                            <constraint firstItem="Cha-mJ-JwF" firstAttribute="leading" secondItem="peo-37-TGU" secondAttribute="leading" id="Hwm-YI-LPs"/>
+                            <constraint firstItem="OoL-VC-Yhg" firstAttribute="top" secondItem="peo-37-TGU" secondAttribute="top" id="d7Z-2S-6iX"/>
+                            <constraint firstAttribute="bottom" secondItem="Cha-mJ-JwF" secondAttribute="bottom" id="j34-ZN-DNd"/>
+                            <constraint firstAttribute="trailing" secondItem="OoL-VC-Yhg" secondAttribute="trailing" id="nl8-7Z-UkK"/>
+                            <constraint firstAttribute="trailing" secondItem="Cha-mJ-JwF" secondAttribute="trailing" id="oi5-0q-yRf"/>
+                            <constraint firstItem="OoL-VC-Yhg" firstAttribute="leading" secondItem="peo-37-TGU" secondAttribute="leading" id="xl4-ja-SpN"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTX-UB-pLM">
+                        <rect key="frame" x="280" y="256" width="50" height="157"/>
+                        <subviews>
+                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-pf-sV2">
+                                <rect key="frame" x="5" y="5" width="40" height="71"/>
+                                <state key="normal" title="评论" image="University_icon_comment"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F3I-dZ-6gY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="103" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz7-FI-s1y">
+                                <rect key="frame" x="5" y="81" width="40" height="71"/>
+                                <state key="normal" title="房源" image="University_icon_house"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NyZ-ny-RLK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dz7-FI-s1y" secondAttribute="trailing" constant="5" id="4uO-9Y-Cl6"/>
+                            <constraint firstItem="kAI-pf-sV2" firstAttribute="leading" secondItem="FTX-UB-pLM" secondAttribute="leading" constant="5" id="7LX-47-RWy"/>
+                            <constraint firstItem="Dz7-FI-s1y" firstAttribute="height" secondItem="kAI-pf-sV2" secondAttribute="height" id="IXb-mp-giH"/>
+                            <constraint firstAttribute="width" constant="50" id="N3u-wa-ILt"/>
+                            <constraint firstAttribute="height" constant="157" id="PWr-HD-5rU"/>
+                            <constraint firstItem="Dz7-FI-s1y" firstAttribute="leading" secondItem="FTX-UB-pLM" secondAttribute="leading" constant="5" id="Tgs-09-t46"/>
+                            <constraint firstAttribute="bottom" secondItem="Dz7-FI-s1y" secondAttribute="bottom" constant="5" id="UDC-pL-rUI"/>
+                            <constraint firstItem="Dz7-FI-s1y" firstAttribute="top" secondItem="kAI-pf-sV2" secondAttribute="bottom" constant="5" id="Zs8-PZ-BYR"/>
+                            <constraint firstItem="kAI-pf-sV2" firstAttribute="top" secondItem="FTX-UB-pLM" secondAttribute="top" constant="5" id="wXt-xy-B4h"/>
+                            <constraint firstAttribute="trailing" secondItem="kAI-pf-sV2" secondAttribute="trailing" constant="5" id="y5C-7t-wGw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eka-da-tHD" userLabel="introduceView">
+                        <rect key="frame" x="15" y="597" width="349" height="56"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sit-De-FdX">
+                                <rect key="frame" x="15" y="15" width="319" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sit-De-FdX" secondAttribute="bottom" constant="20" id="4hK-zI-686"/>
+                            <constraint firstItem="sit-De-FdX" firstAttribute="top" secondItem="Eka-da-tHD" secondAttribute="top" constant="15" id="Ceu-Ic-CiI"/>
+                            <constraint firstItem="sit-De-FdX" firstAttribute="top" secondItem="Eka-da-tHD" secondAttribute="top" constant="15" id="EIy-I0-60w"/>
+                            <constraint firstItem="sit-De-FdX" firstAttribute="leading" secondItem="Eka-da-tHD" secondAttribute="leading" constant="15" id="ONI-Uj-4CI"/>
+                            <constraint firstAttribute="trailing" secondItem="sit-De-FdX" secondAttribute="trailing" constant="15" id="kO0-6g-Nan"/>
+                            <constraint firstAttribute="bottom" secondItem="sit-De-FdX" secondAttribute="bottom" constant="20" id="pry-pY-gIs"/>
+                            <constraint firstItem="sit-De-FdX" firstAttribute="leading" secondItem="Eka-da-tHD" secondAttribute="leading" constant="15" id="yoe-Xj-Vks"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1J-QK-aQd">
+                        <rect key="frame" x="15" y="567" width="100" height="25"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="大学介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSE-tS-seS">
+                                <rect key="frame" x="15" y="5" width="70" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="CfM-7J-gCY"/>
+                            <constraint firstAttribute="height" constant="25" id="dfY-VL-wMQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Eka-da-tHD" secondAttribute="bottom" constant="15" id="4ji-Qh-HFy"/>
+                    <constraint firstItem="VdP-oP-Loe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="856-s6-GS3"/>
+                    <constraint firstItem="peo-37-TGU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fhe-hI-dbI"/>
+                    <constraint firstAttribute="trailing" secondItem="FTX-UB-pLM" secondAttribute="trailing" constant="15" id="LIC-Mp-ywh"/>
+                    <constraint firstItem="FTX-UB-pLM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NqR-tv-f41"/>
+                    <constraint firstItem="Eka-da-tHD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="SGn-K1-eby"/>
+                    <constraint firstAttribute="trailing" secondItem="Eka-da-tHD" secondAttribute="trailing" constant="15" id="Sd1-jj-MDm"/>
+                    <constraint firstItem="i1J-QK-aQd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VxF-uq-6o7"/>
+                    <constraint firstItem="peo-37-TGU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="clE-pq-hGX"/>
+                    <constraint firstItem="FTX-UB-pLM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="280" id="den-c8-tdv"/>
+                    <constraint firstItem="peo-37-TGU" firstAttribute="leading" secondItem="VdP-oP-Loe" secondAttribute="trailing" constant="62" id="fBt-W6-SfN"/>
+                    <constraint firstItem="peo-37-TGU" firstAttribute="centerY" secondItem="VdP-oP-Loe" secondAttribute="centerY" id="kql-sT-AzC"/>
+                    <constraint firstItem="VdP-oP-Loe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="uF5-WR-lC1"/>
+                    <constraint firstItem="Eka-da-tHD" firstAttribute="top" secondItem="i1J-QK-aQd" secondAttribute="bottom" constant="5" id="zDn-QM-WRc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backBtn" destination="VdP-oP-Loe" id="gsI-Jk-7aV"/>
+                <outlet property="commentBtn" destination="kAI-pf-sV2" id="UUz-oi-kE2"/>
+                <outlet property="houseBtn" destination="Dz7-FI-s1y" id="eZi-zy-Hzv"/>
+                <outlet property="introduceLabel" destination="sit-De-FdX" id="rQJ-Ai-ZoC"/>
+                <outlet property="introduceTitleLabel" destination="GSE-tS-seS" id="pL3-Bt-lCw"/>
+                <outlet property="introduceView" destination="Eka-da-tHD" id="dMw-Cd-fBY"/>
+                <outlet property="universityEnLabel" destination="Cha-mJ-JwF" id="faQ-8i-AMU"/>
+                <outlet property="universityIntroduceView" destination="i1J-QK-aQd" id="hvz-tz-Wwn"/>
+                <outlet property="universityNameLabel" destination="OoL-VC-Yhg" id="I3H-RX-XMt"/>
+                <outlet property="universityNameView" destination="peo-37-TGU" id="YN9-rT-GHX"/>
+            </connections>
+            <point key="canvasLocation" x="8" y="352.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="University_icon_comment" width="24" height="24"/>
+        <image name="University_icon_house" width="24" height="24"/>
+        <image name="icon_back" width="9" height="23"/>
+    </resources>
+</document>

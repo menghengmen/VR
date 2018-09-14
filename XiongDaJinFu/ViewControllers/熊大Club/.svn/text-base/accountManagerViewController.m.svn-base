@@ -1,0 +1,98 @@
+//
+//  accountManagerViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/6.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "accountManagerViewController.h"
+#import "YJPersonInfoCell.h"
+
+
+
+@interface accountManagerViewController ()<YJPersonInfoCellDelegate>
+@property (nonatomic, strong) NSMutableArray *itemArray;
+
+@end
+
+@implementation accountManagerViewController
+
+- (NSMutableArray *)nameArray
+{
+    if (!_itemArray) {
+        NSMutableArray *a1 = [NSMutableArray arrayWithArray:@[@"头像",@"昵称"]];
+        NSMutableArray *a2 = [NSMutableArray arrayWithArray:@[@"修改密码",@"绑定手机" ]];
+        NSMutableArray *a3 = [NSMutableArray arrayWithArray:@[@"绑定推广人"]];
+        
+        NSArray *arr = @[a1, a2, a3];
+        _itemArray = [NSMutableArray arrayWithArray:arr];
+    }
+    return _itemArray;
+}
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self tableView];
+    [self setUpNewNai:@"返回" Title:@"账号管理"];
+         
+    // Do any additional setup after loading the view.
+}
+
+#pragma mark- UITableViewDataSource, UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    return self.nameArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.itemArray[section] count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    YJPersonInfoCell *cell = [YJPersonInfoCell personInfoCellWithTableView:tableView];
+    cell.delegate = self;
+    //cell左边的数据
+    NSArray *arr = self.itemArray[indexPath.section];
+    cell.name.text = arr[indexPath.row];
+    [cell.name setTextColor:[UIColor colorWithHexString:@"4d4d4d"]];
+    
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 44;
+    }
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 4;
+}
+
+
+
+
+@end

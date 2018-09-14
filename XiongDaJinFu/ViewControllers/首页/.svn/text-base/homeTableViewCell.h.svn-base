@@ -1,0 +1,21 @@
+//
+//  homeTableViewCell.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface homeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *titleImageBTn;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel1;
++ (instancetype)homeTableViewCellWithTableView:(UITableView *)tableView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel2;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel2;
+@end

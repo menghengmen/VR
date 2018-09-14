@@ -1,0 +1,16 @@
+//
+//  salesmanViewController.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/6.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "BaseViewController.h"
+
+@interface salesmanViewController : BaseViewController<YJItemViewDelegate>
+
+//用以区分业务员，经销商
+@property   (nonatomic,copy)   NSString  * typeString;
+
+@end

@@ -1,0 +1,22 @@
+//
+//  myOrderViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 16/12/2.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "myOrderViewController.h"
+
+@implementation myOrderViewController
+
+- (void)viewDidLoad{
+
+
+    [self setUpNewNai:@"返回" Title:@"我的订单"];
+
+     
+}
+
+
+@end

@@ -1,0 +1,71 @@
+8
+
+dir
+1532
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm/ios/trunk/XiongDaJinFu/XiongDaJinFu/ThirdParty/EGORefreshTable
+http://mh_yf_1612@121.40.132.233/svn/mdjrdsptxm
+
+
+
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+
+
+svn:special svn:externals svn:needs-lock
+
+LoadMoreTableFooterView.m
+file
+
+
+
+
+2016-07-18T08:01:59.000000Z
+044b041c213b59bf4bae2132761e1bb4
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+EGORefreshTableHeaderView.m
+file
+
+
+
+
+2016-07-18T08:01:59.000000Z
+c42f2a3658d8b6267f5b2e9c778e3151
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+LoadMoreTableFooterView.h
+file
+
+
+
+
+2016-07-18T08:01:59.000000Z
+f48b42910fe388c8a45ae94803d1f25e
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+
+Resources
+dir
+
+EGORefreshTableHeaderView.h
+file
+
+
+
+
+2016-07-18T08:01:59.000000Z
+01481fa1a852bb49331bcaa46fd4d50d
+2016-12-09T04:02:38.323202Z
+1532
+mh_yf_1612
+has-props
+

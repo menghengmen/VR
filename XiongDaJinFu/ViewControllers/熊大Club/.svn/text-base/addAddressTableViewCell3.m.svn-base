@@ -1,0 +1,35 @@
+//
+//  addAddressTableViewCell3.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "addAddressTableViewCell3.h"
+
+@implementation addAddressTableViewCell3
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
++ (instancetype)editAddressCell3WithTableView:(UITableView *)tableView{
+
+    static NSString *identify = @"YJEditAddressCell3";
+    addAddressTableViewCell3 *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:@"addAddressTableViewCell3" owner:nil options:nil][0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

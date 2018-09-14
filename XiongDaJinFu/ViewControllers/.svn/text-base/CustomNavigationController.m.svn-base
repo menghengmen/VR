@@ -1,0 +1,95 @@
+//
+//  CustomNavigationController.m
+//  CustomNavigationBarDemo
+//
+//  Created by gary on 16/12/1.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+
+#import "CustomNavigationController.h"
+
+@implementation CustomNavigationController
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        
+        //self.wantsFullScreenLayout = YES;
+
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    //self.wantsFullScreenLayout = YES;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+   
+     
+    [self setNavigationBarHidden:NO];       // 使导航条有效
+    [self.navigationBar setHidden:YES];     // 隐藏导航条，但由于导航条有效，系统的返回按钮页有效，所以可以使用系统的右滑返回手势。
+    _orientationMask = UIInterfaceOrientationMaskPortrait;
+
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+// 是否可右滑返回
+- (void)navigationCanDragBack:(BOOL)bCanDragBack
+{
+    if (IsiOS7Later)
+    {
+        self.interactivePopGestureRecognizer.enabled = YES;
+    }else{}
+}
+
+#pragma mark - rotate
+#pragma mark -
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return _orientationMask;
+}
+
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+}
+
+////重写push方法
+//-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//    viewController.hidesBottomBarWhenPushed = YES;
+//    [super pushViewController:viewController animated:animated];
+//}
+//
+//-(UIViewController *)popViewControllerAnimated:(BOOL)animated{
+//    return [super popViewControllerAnimated:animated];
+//}
+
+@end

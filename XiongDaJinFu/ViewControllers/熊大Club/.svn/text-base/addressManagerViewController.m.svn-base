@@ -1,0 +1,90 @@
+//
+//  addressManagerViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/6.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "addressManagerViewController.h"
+#import "addressManagerTableViewCell.h"
+
+#import "addAddressViewController.h"
+@interface addressManagerViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+
+    UITableView  * addressManagerTableView;
+
+}
+
+
+
+@end
+@implementation addressManagerViewController
+
+- (void)viewDidLoad{
+
+
+
+   // [self tableView];
+
+    [self setUpNewNai:@"返回" Title:@"管理收货地址"];
+
+    [self setUpUI];
+
+}
+- (void)setUpUI{
+    UITableView  * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) ];
+    tableView.dataSource  = self;
+    tableView.delegate  = self;
+    tableView.rowHeight  = 44;
+    
+    [tableView registerNib:[UINib nibWithNibName:@"addressManagerTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.view addSubview:tableView];
+    addressManagerTableView = tableView;
+
+   //新增收货地址
+    UIButton  * addAddressBtn = [XDCommonTool newButtonWithType:UIButtonTypeSystem normalImage:nil buttonTitle:@"+新增收货地址" target:self action:@selector(addAddressBtn)];
+    
+    addAddressBtn.backgroundColor = [UIColor colorWithHexString:@"#fc2a2b"];
+    [addAddressBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:addAddressBtn];
+    
+    [addAddressBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.width.equalTo(self.view);
+        make.height.equalTo(@(99/2));
+    }];
+    
+
+
+
+}
+# pragma mark
+# pragma mark - UITableViewDataSource
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 50;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    addressManagerTableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 180;
+
+}
+
+# pragma mark
+# pragma mark - 新增收货地址
+- (void)addAddressBtn{
+
+    [self.navigationController pushViewController:[addAddressViewController new] animated:YES];
+
+}
+
+@end

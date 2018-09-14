@@ -1,0 +1,36 @@
+//
+//  addAddressTableViewCell2.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "addAddressTableViewCell2.h"
+
+@implementation addAddressTableViewCell2
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
++ (instancetype)editAddressCell2WithTableView:(UITableView *)tableView{
+    static NSString *identify = @"YJEditAddressCell2";
+    addAddressTableViewCell2 *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:@"addAddressTableViewCell2" owner:nil options:nil][0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+
+
+
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

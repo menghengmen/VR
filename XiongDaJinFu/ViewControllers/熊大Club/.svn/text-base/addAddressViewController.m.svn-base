@@ -1,0 +1,109 @@
+//
+//  addAddressViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "addAddressViewController.h"
+#import "addAddressTableViewCell1.h"
+#import "addAddressTableViewCell2.h"
+#import "addAddressTableViewCell3.h"
+@interface addAddressViewController ()
+
+@end
+
+@implementation addAddressViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self setUpNewNai:@"返回" Title:@"新增收货地址"];
+    self.tableView.scrollEnabled = NO;
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#f0f0f0"];
+    self.tableView.backgroundColor = [UIColor colorWithHexString:@"#ffffff"];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.row) {
+        case 0:{
+            addAddressTableViewCell1  * cell = [addAddressTableViewCell1 editAddressCellWithTableView:tableView];
+            
+            return cell;
+        }
+            break;
+            
+        
+        case 1:{
+            addAddressTableViewCell1  * cell = [addAddressTableViewCell1 editAddressCellWithTableView:tableView];
+        
+            cell.nameTextField.placeholder = @"手机号码";
+            return cell;
+        
+        }
+            break;
+        
+        case 2:{
+                addAddressTableViewCell2  * cell = [addAddressTableViewCell2 editAddressCell2WithTableView:tableView];
+              cell.nameLabel.text = @"省，市，区";
+            
+            return cell;
+        
+        }
+            break;
+        
+        case 3:{
+            addAddressTableViewCell2  * cell = [addAddressTableViewCell2 editAddressCell2WithTableView:tableView];
+            cell.nameLabel.text = @"街道";
+            
+            return cell;
+        
+        }
+            break;
+        case 4:{
+            addAddressTableViewCell3  * cell = [addAddressTableViewCell3 editAddressCell3WithTableView:tableView];
+           cell.nameTextField3.placeholder = @"详细地址";
+            return cell;
+            
+        }
+            break;
+            
+
+        default:
+            break;
+    }
+    
+    return nil;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    if (indexPath.row==4) {
+        return 110;
+    }
+    else{
+        return 40;
+
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

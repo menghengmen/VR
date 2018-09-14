@@ -1,0 +1,165 @@
+//
+//  clientManagerViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/8.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "clientManagerViewController.h"
+#import "clientmanagerTableViewCell1.h"
+#import "clientManagerTableViewCell2.h"
+#import "messageViewController.h"
+
+#import "saleManManagerTableViewCell1.h"
+#import "saleManManageTableViewCell2.h"
+#import "addSaleManViewController.h"
+@interface clientManagerViewController ()
+
+@end
+
+@implementation clientManagerViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setUpNewNai:@"返回" Title:self.typeString];
+    
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"clientmanagerTableViewCell1" bundle:nil] forCellReuseIdentifier:@"cell1"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"clientManagerTableViewCell2" bundle:nil] forCellReuseIdentifier:@"cell2"];
+    
+    //业务员管理
+    [self.tableView registerNib:[UINib nibWithNibName:@"saleManManagerTableViewCell1" bundle:nil] forCellReuseIdentifier:@"cell3"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"saleManManageTableViewCell2" bundle:nil] forCellReuseIdentifier:@"cell4"];
+    
+
+    
+    
+    // Do any additional setup after loading the view from its nib.
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row ==0) {
+        
+        
+        if ([self.typeString isEqualToString:@"业务员管理"]) {
+            saleManManagerTableViewCell1 * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+            cell.backgroundColor = [UIColor colorWithHexString:@"#f0f0f0"];
+            cell.addSaleManBtn.backgroundColor = [UIColor colorWithHexString:@"#fc2a2b"];
+            
+            [cell.addSaleManBtn addTarget:self action:@selector(addSaleManBtn) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            return cell;
+        }
+        else{
+        clientmanagerTableViewCell1  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+   
+        cell.searchBar.layer.cornerRadius = 10;
+        
+        return cell;
+   
+        }
+        
+        
+  }
+   
+    else{
+    
+        if ([self.typeString isEqualToString:@"业务员管理"]) {
+            saleManManageTableViewCell2 * cell = [tableView dequeueReusableCellWithIdentifier:@"cell4" forIndexPath:indexPath];
+           
+            [cell.moreInfoBtn addTarget:self action:@selector(moreInfoBtn) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            return cell;
+
+        }
+        
+        
+        
+        else{
+        clientManagerTableViewCell2  * cell2 = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+    
+        [cell2.checkBtn addTarget:self action:@selector(checkClient:) forControlEvents:UIControlEventTouchUpInside];
+        
+        return cell2;
+        }
+    
+    
+    
+    }
+
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    if (indexPath.row==0) {
+        return 44;
+    }
+    
+   
+    else{
+        if ([self.typeString isEqualToString:@"业务员管理"]) {
+            return 140;
+
+        }
+        else{
+            return 80;
+        }
+        
+        
+   
+    
+    
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+# pragma mark
+# pragma mark - 添加业务员
+- (void)addSaleManBtn{
+
+    [self.navigationController pushViewController:[addSaleManViewController new] animated:YES];
+
+}
+
+# pragma mark
+# pragma mark - 进入更多资料
+- (void)moreInfoBtn
+{
+ [self.navigationController pushViewController:[messageViewController new] animated:YES];
+
+}
+
+
+# pragma mark
+# pragma mark - 查看客户资料
+- (void)checkClient:(UIButton*)brn{
+
+
+    [self.navigationController pushViewController:[messageViewController new] animated:YES];
+
+}
+
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

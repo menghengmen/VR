@@ -1,0 +1,18 @@
+//
+//  discountViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/5.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "discountViewController.h"
+
+@implementation discountViewController
+- (void)viewDidLoad{
+
+    [self setUpNewNai:nil Title:@"特惠频道"];
+
+
+}
+@end

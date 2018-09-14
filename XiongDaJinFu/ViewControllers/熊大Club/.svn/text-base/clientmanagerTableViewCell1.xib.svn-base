@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="clientmanagerTableViewCell1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="请输入用户名或真实姓名" translatesAutoresizingMaskIntoConstraints="NO" id="xeG-bA-2zX">
+                        <rect key="frame" x="10" y="7" width="300" height="30"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xeG-bA-2zX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="FBu-9U-NKj"/>
+                    <constraint firstAttribute="trailing" secondItem="xeG-bA-2zX" secondAttribute="trailing" constant="10" id="Tlm-lr-Sf7"/>
+                    <constraint firstItem="xeG-bA-2zX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="mS9-77-2SS"/>
+                    <constraint firstAttribute="bottom" secondItem="xeG-bA-2zX" secondAttribute="bottom" constant="7" id="slO-gS-geL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="searchBar" destination="xeG-bA-2zX" id="F1c-J2-LjP"/>
+            </connections>
+            <point key="canvasLocation" x="-84" y="12"/>
+        </tableViewCell>
+    </objects>
+</document>

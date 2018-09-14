@@ -1,0 +1,13 @@
+//
+//  tuiGuangViewController.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/8.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "BaseViewController.h"
+
+@interface tuiGuangViewController : BaseViewController
+
+@end

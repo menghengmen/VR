@@ -1,0 +1,33 @@
+//
+//  saleManTableViewCell2.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class saleManTableViewCell2;
+@protocol saleManTableViewCell2Delegate <NSObject>
+
+@optional
+- (void)itemViewBtnClicksaleManTableView:(saleManTableViewCell2 *)cellView tag:(NSInteger)tag name:(NSString *)buttonName;
+
+@end
+
+
+
+
+@interface saleManTableViewCell2 : UITableViewCell<YJItemViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *saleManBtn1;
+@property (weak, nonatomic) IBOutlet UIButton *saleManBtn2;
+
+@property (weak, nonatomic) IBOutlet UIButton *saleManBtn3;
+@property (weak, nonatomic) IBOutlet UIButton *saleManBtn4;
+
+@property   (nonatomic,strong)   YJItemView  * itemView;
+
+
+@property  (nonatomic,weak)   id<saleManTableViewCell2Delegate>delegate;
+@end

@@ -1,0 +1,72 @@
+//
+//  tuiGuangViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/8.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "tuiGuangViewController.h"
+#import "addAddressTableViewCell2.h"
+@interface tuiGuangViewController ()
+
+@end
+
+@implementation tuiGuangViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+   
+    [self setUpNewNai:@"返回" Title:@"推广信息"];
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 10;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    
+            addAddressTableViewCell2  * cell = [addAddressTableViewCell2 editAddressCell2WithTableView:tableView];
+            cell.nameLabel.text = @"推广码";
+            cell.addressTextField.placeholder = nil;
+            return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.row == 1) {
+        return 300;
+    }
+    else{
+        return 44;
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

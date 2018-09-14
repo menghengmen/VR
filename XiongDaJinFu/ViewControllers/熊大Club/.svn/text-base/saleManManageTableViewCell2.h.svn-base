@@ -1,0 +1,15 @@
+//
+//  saleManManageTableViewCell2.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/9.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface saleManManageTableViewCell2 : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *moreInfoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *tichengInfoBtn;
+
+@end

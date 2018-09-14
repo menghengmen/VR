@@ -1,0 +1,202 @@
+//
+//  salesmanViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/6.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "salesmanViewController.h"
+#import "saleManTableViewCell1.h"
+#import "saleManTableViewCell2.h"
+#import "messageViewController.h"
+#import "tuiGuangViewController.h"
+#import "clientManagerViewController.h"
+@interface salesmanViewController ()<UITableViewDelegate,UITableViewDataSource,saleManTableViewCell2Delegate>
+{
+    UITableView  * saleManTableView;
+
+}
+
+@property(nonatomic,strong)  NSMutableArray  * dataArray;
+
+@end
+
+@implementation salesmanViewController
+
+- (NSMutableArray*)dataArray{
+    if (!_dataArray) {
+       
+        if ([self.typeString isEqualToString:@"经销商"]) {
+            _dataArray = [[NSMutableArray alloc] initWithObjects:@"业务员管理",@"个人资料",@"推广二维码",@"分销规则", nil];
+        }
+        else{
+        _dataArray = [[NSMutableArray alloc] initWithObjects:@"个人资料",@"推广二维码",@"分销规则", nil];
+        }
+    }
+
+    return  _dataArray;
+
+}
+
+
+
+
+- (void)viewDidLoad{
+    
+    
+    [self setUpNewNai:@"返回" Title:self.typeString];
+    [self setUpUi];
+
+   
+}
+- (void)setUpUi{
+
+    UITableView  * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) ];
+    tableView.dataSource  = self;
+    tableView.delegate  = self;
+    
+    tableView.tableFooterView = [[UIView alloc] init];
+    [tableView registerNib:[UINib nibWithNibName:@"saleManTableViewCell1" bundle:nil] forCellReuseIdentifier:@"cell"];
+    
+   //[tableView registerNib:[UINib nibWithNibName:@"saleManTableViewCell2" bundle:nil] forCellReuseIdentifier:@"cell2"];
+    [tableView registerClass:[saleManTableViewCell2 class] forCellReuseIdentifier:@"cell2"];
+
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell3"];
+    [self.view addSubview:tableView];
+    saleManTableView = tableView;
+
+
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count+2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0) {
+        saleManTableViewCell1  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        if ([self.typeString isEqualToString:@"经销商"]) {
+            cell.leftBackvIEW.backgroundColor = [UIColor colorWithHexString:@"#8179a2"];
+            cell.rightBackView.backgroundColor = [UIColor colorWithHexString:@"#544973"];
+            cell.leftSaleNumber.text = @"111111";
+       
+        }
+        
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        return cell;
+        
+
+    }
+    
+    if (indexPath.row ==1) {
+        saleManTableViewCell2  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell2"];
+        
+        cell.delegate = self;
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+
+        return cell;
+    }
+    
+    
+    
+    else{
+    
+        UITableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+        cell.textLabel.text = self.dataArray[indexPath.row-2];
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+
+        return cell;
+    
+    }
+
+    
+    
+
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    
+    if (indexPath.row==0) {
+        return 100;
+    }
+    
+    if (indexPath.row == 1) {
+        return 120;
+    }
+    else{
+        return 44;
+    }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+       
+        
+        case 2:
+           
+            if ([self.typeString isEqualToString:@"经销商"]) {
+               
+                
+                clientManagerViewController  *  clientVC = [clientManagerViewController new];
+                
+               clientVC.typeString =@"业务员管理";
+                [self.navigationController pushViewController:clientVC animated:YES];
+               
+                
+                
+                
+                break;
+            }
+            else{
+            [self.navigationController pushViewController:[messageViewController new] animated:YES];
+            break;
+            }
+        
+        
+        case 3:
+           
+            if ([self.typeString isEqualToString:@"经销商"]) {
+                [self.navigationController pushViewController:[messageViewController new] animated:YES];
+                break;
+            }
+            else{
+                
+            }
+
+            
+        case 4:
+            [self.navigationController pushViewController:[tuiGuangViewController new] animated:YES];
+            break;
+            
+           
+            
+        default:
+            break;
+    }
+
+    
+
+}
+
+# pragma mark
+# pragma mark - saleManTableViewCell2Delegate
+
+- (void)itemViewBtnClicksaleManTableView:(saleManTableViewCell2 *)cellView tag:(NSInteger)tag name:(NSString *)buttonName{
+
+   
+    if ([buttonName isEqualToString:@"客户管理"]) {
+        clientManagerViewController * clientVC = [clientManagerViewController new];
+        
+        clientVC.typeString = @"客户管理";
+        [self.navigationController pushViewController:clientVC animated:YES];
+        
+
+    }
+    
+   
+
+}
+
+@end

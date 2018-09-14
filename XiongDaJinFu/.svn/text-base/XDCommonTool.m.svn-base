@@ -1,0 +1,569 @@
+//
+//  XDCommonTool.m
+//  XiongDaJinFu
+//
+//  Created by gary on 16/12/1.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "XDCommonTool.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonHMAC.h>
+#import "HomePageViewController.h"
+#import "HoneyBottleViewController.h"
+#import "MyAccountViewController.h"
+#import "XiongDaClubViewController.h"
+#import "HomeTabBarController.h"
+#import "CustomNavigationController.h"
+#import "discountViewController.h"
+
+@implementation XDCommonTool
+
++(UIWindow *)window{
+    
+    
+    return [[[UIApplication sharedApplication]delegate]window];
+    
+    
+    
+}
++ (void)goToMain{
+
+    //首页
+    HomePageViewController *homeview=[[HomePageViewController alloc]init];
+    
+  
+    //分类
+    HoneyBottleViewController *BottleView=[[HoneyBottleViewController alloc]init];
+    
+  
+    //特惠项目
+    discountViewController   * disCountVC = [[discountViewController alloc] init];
+    
+    
+    //购物车
+    XiongDaClubViewController *XiongDaView=[[XiongDaClubViewController alloc]init];
+    
+   
+    //我的
+    MyAccountViewController *MyAccountView=[[MyAccountViewController alloc]init];
+    
+   
+    HomeTabBarController  * tabBar = [[HomeTabBarController alloc] init];
+    tabBar.viewControllers = @[homeview,BottleView,disCountVC,XiongDaView,MyAccountView];
+
+    CustomNavigationController  * navi = [[CustomNavigationController alloc] initWithRootViewController:tabBar];
+    
+    
+    
+    self.window.rootViewController=navi;
+
+
+}
+
+
+
+
+/**
+ *  正则表达式检验手机号
+ */
++ (BOOL)checkTel:(NSString *)str
+{
+    
+    if ([str length] == 0) {
+        return NO;
+    }
+    
+    //1[0-9]{10}
+    
+    //^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$
+    
+    //    NSString *regex = @"[0-9]{11}";
+    
+    //    NSString *regex = @"^((13[0-9])|(147)|(15[^4,\\D])|(18[0,1,2,3,5-9]))\\d{8}$";
+    NSString *regex =@"^[1]((3|5|7|8)\\d{1})\\d{8}$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    BOOL isMatch = [pred evaluateWithObject:str];
+    
+    if (!isMatch) {
+        return NO;
+    }
+    return YES;
+    
+}
+
+/**
+ *  保存BOOL型数据到UserDefault
+ */
++ (void)saveToUserDefaultWithBool:(BOOL)value key:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setBool:value forKey:key];
+    [defaults synchronize];
+}
+
+/**
+ *  从UserDefault读取BOOL型数据
+ */
++ (BOOL)readBoolFromUserDefaultWithKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    BOOL result = [defaults boolForKey:key];
+    
+    return result;
+}
+
+/**
+ *  保存NSString型数据到UserDefault
+ */
++ (void)saveToUserDefaultWithString:(NSString *)value key:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:value forKey:key];
+    [defaults synchronize];
+}
+
+/**
+ *  从UserDefault读取NSString型数据
+ */
++ (NSString *)readStringFromUserDefaultWithKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *result = [defaults stringForKey:key];
+    
+    return result;
+}
+/**
+ *  保存NSDictionary型数据到UserDefault
+ */
++ (void)saveToUserDefaultWithDic:(NSDictionary *)value key:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:value options:NSJSONWritingPrettyPrinted    error:nil];
+    [defaults setObject:data forKey:key];
+    [defaults synchronize];
+}
+
+/**
+ *  从UserDefault读取NSDictionary型数据
+ */
++ (NSDictionary *)readDicFromUserDefaultWithKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData  *data = [defaults  dataForKey:key];
+    if (!data) {
+        return nil;
+    }
+    
+    NSDictionary *result = [NSJSONSerialization  JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    return result;
+}
+
+/**
+ *  删除某个存储的元素
+ */
++ (void)removeIdForKey:(NSString *)key
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults removeObjectForKey:key];
+    
+    [defaults synchronize];
+}
+
+
+/**
+ *  根据相应信息弹出一个AlertView，适合点击按钮后不采取其他操作的情况
+ */
++ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message sureBtn:(NSString *)sure
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:sure otherButtonTitles:nil];
+    [alert show];
+}
+
++ (BOOL)isLogin
+{
+    NSString *isLogin = [XDCommonTool readStringFromUserDefaultWithKey:kIsLogin];
+    return [isLogin isEqualToString:@"true"];
+    //    return YES;
+}
+
+
+//tabBar的高度
++ (CGFloat)tabBarHeight
+{
+    return SCREENHEIGHT * 0.09167;
+}
+
++ (NSString *)getURLStringWithString:(NSString *)aString
+{
+    NSString *urlString;
+    NSString *firstChar = [aString substringToIndex:1];
+    if ([firstChar isEqualToString:@"/"]) {
+        urlString = [NSString stringWithFormat:@"%@%@", globalURL, aString];
+    } else {
+        urlString = [NSString stringWithFormat:@"%@/%@", globalURL, aString];
+    }
+    
+    return urlString;
+}
++(NSString *)getDateFormatterWithDate:(NSDate *)date{
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    
+    [fmt setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [fmt setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [fmt stringFromDate:date];
+    return dateString;
+}
++(NSString *)changeDate:(NSDate *)date withFormatter:(NSString *)format
+{
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    [fmt setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [fmt setDateFormat:format];
+    NSString *dateString = [fmt stringFromDate:date];
+    return dateString;
+}
++(NSString *)getFromDateString:(NSString *)string withStringFormatter:(NSString *)format andchangeFormat:(NSString *)aimFormat
+{
+    NSDateFormatter *fmt1 = [[NSDateFormatter alloc]init];
+    NSDateFormatter *fmt2 = [[NSDateFormatter alloc]init];
+    
+    [fmt1 setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [fmt2 setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [fmt1 setDateFormat:format];
+    [fmt2 setDateFormat:aimFormat];
+    NSDate *date = [fmt1 dateFromString:string];
+    NSString *dateString = [fmt2 stringFromDate:date];
+    return dateString;
+}
++(NSDate *)getNow
+{
+    
+    NSDate *date = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate: date];
+    return [NSDate dateWithTimeIntervalSinceNow:interval];
+}
+
+
++(void)alertWithMessage:(NSString *)message
+{
+    
+    
+    
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+    
+    
+    
+    [alertView show];
+}
+
+
++(NSMutableArray *)getArrayWithKey:(NSString *)key fromArray:(NSMutableArray *)array
+{
+    
+    NSMutableArray *returnArray = [NSMutableArray array];
+    for (id dic in array) {
+        [returnArray addObject:[dic valueForKey:key]];
+    }
+    return returnArray;
+}
+
++(void)showMessage:(NSString *)message inView:(UIView *)view
+{
+    //    UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    //    UIView *showview =  [[UIView alloc]init];
+    //    showview.backgroundColor = [UIColor blackColor];
+    //    showview.frame = CGRectMake(1, 1, 1, 1);
+    //    showview.alpha = 1.0f;
+    //    showview.layer.cornerRadius = 5.0f;
+    //    showview.layer.masksToBounds = YES;
+    //    [window addSubview:showview];
+    //
+    //    UILabel *label = [[UILabel alloc]init];
+    //    CGSize LabelSize =  [message boundingRectWithSize:CGSizeMake(290, 9000) options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17 ]} context:nil].size;
+    //    label.frame = CGRectMake(10, 5, LabelSize.width, LabelSize.height);
+    //    label.text = message;
+    //    label.textColor = [UIColor whiteColor];
+    //    label.textAlignment = 1;
+    //    label.backgroundColor = [UIColor clearColor];
+    //    label.font = [UIFont boldSystemFontOfSize:15];
+    //    [showview addSubview:label];
+    //    showview.frame = CGRectMake((globalRect.size.width - LabelSize.width - 20)/2, globalRect.size.height - 100, LabelSize.width+20, LabelSize.height+10);
+    //    [UIView animateWithDuration:1.5 animations:^{
+    //        showview.alpha = 0;
+    //    } completion:^(BOOL finished) {
+    //        [showview removeFromSuperview];
+    //    }];
+    MBProgressHUD *hud = [[MBProgressHUD alloc]init];
+    hud.labelText =message;
+    hud.mode = MBProgressHUDModeText;
+    [view addSubview:hud];
+    //    __weak typeof(view) weakView = view;
+    [hud showAnimated:YES whileExecutingBlock:^{
+        sleep(1.0);
+    } completionBlock:^{
+        [hud removeFromSuperview];
+    }];
+    
+}
+/**
+* 字串MD5 加密
+* @Param
+* @Return
+*/
++ (NSString *)md5:(NSString *)str
+{
+    const char *cStr = [str UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, (uint32_t)strlen(cStr), result); // This is the md5 call
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
+}
+
+/**
+ * 转码unicode 除数字和字母
+ * @Param
+ * @Return
+ */
++(NSString*) escapedStringAll:(NSString*)unescaped
+{
+    NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
+                                                                                                    NULL,
+                                                                                                    (__bridge CFStringRef) unescaped,
+                                                                                                    NULL,
+                                                                                                    CFSTR("!*'();:@&=+$,/?%#[]\" "),
+                                                                                                    kCFStringEncodingUTF8));
+    return escapedString;
+}
+
+/**
+ * hmacsha1 算法
+ * @Param
+ * @Return
+ */
+- (NSString *) hmacSha1:(NSString*)key text:(NSString*)text
+{
+    const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *cData = [text cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    uint8_t cHMAC[CC_SHA1_DIGEST_LENGTH];
+    
+    CCHmac(kCCHmacAlgSHA1, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    
+    //NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:CC_SHA1_DIGEST_LENGTH];
+    NSString *hash;
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", cHMAC[i]];
+    hash = output;
+    
+    return hash;
+}
+
+//计算单个文件大小
+
++(float)fileSizeAtPath:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if([fileManager fileExistsAtPath:path]){
+        long long size=[fileManager attributesOfItemAtPath:path error:nil].fileSize;
+        return size/1024.0/1024.0;
+    }
+    return 0;
+}
+//计算目录大小
+
++(float)folderSizeAtPath:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    float folderSize;
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles=[fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            NSLog(@"fileName   %@", fileName);
+            if ([fileName isEqualToString:@"default"]) {
+                NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+                folderSize +=[XDCommonTool fileSizeAtPath:absolutePath];
+            }
+        }
+        //SDWebImage框架自身计算缓存的实现
+        folderSize+=[[SDImageCache sharedImageCache] getSize]/1024.0/1024.0;
+        return folderSize;
+    }
+    return 0;
+}
+//清理缓存文件
+
+//同样也是利用NSFileManager API进行文件操作，SDWebImage框架自己实现了清理缓存操作，我们可以直接调用。
+
++(void)clearCache:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles=[fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            NSLog(@"fileName1   %@", fileName);
+            //如有需要，加入条件，过滤掉不想删除的文件
+           // if ([fileName isEqualToString:@"default"]) {
+                NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+                [fileManager removeItemAtPath:absolutePath error:nil];
+           // }
+            
+        }
+    }
+    [[SDImageCache sharedImageCache] cleanDisk];
+}
+
+//判断当前的网络是3g还是wifi
+
++ (void)reachability
+{
+    // 检测网络连接状态
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    // 连接状态回调处理
+    GlobalObject * globe = [GlobalObject shareInstance];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status)
+     {
+         switch (status)
+         {
+             case AFNetworkReachabilityStatusUnknown:
+                 // 回调处理
+                 break;
+             case AFNetworkReachabilityStatusNotReachable:
+                 // 回调处理
+                 break;
+             case AFNetworkReachabilityStatusReachableViaWWAN:
+                 // 回调处理
+                 break;
+             case AFNetworkReachabilityStatusReachableViaWiFi:
+                 // 回调处理
+                 break;
+             default:
+                 break;
+         }
+         globe.networkStatus = status;
+     }];
+}
+//普通btn
++ (UIButton *)newButtonWithType:(UIButtonType)type normalImage:(NSString *)imageName  buttonTitle:(NSString*)btnTitle target:(id)target action:(SEL)action{
+    // TODO: implement
+    UIButton * btn = [UIButton buttonWithType:type];
+    [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    
+    //btn.backgroundColor = [UIColor clearColor];
+    [btn setTitle:btnTitle forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+//带Frame的button
++ (UIButton *)newButtonWithType:(UIButtonType)type  frame:(CGRect)frame normalImage:(NSString *)imageName  buttonTitle:(NSString*)btnTitle target:(id)target action:(SEL)action{
+    UIButton * btn = [UIButton buttonWithType:type];
+    [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    
+    [btn setTitle:btnTitle forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:frame];
+    return btn;
+    
+}
+//颜色转image
++ (UIImage *)createImageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return theImage;
+}
+//纯色btn
++ (UIButton *)newButtonWithType:(UIButtonType)type target:(id)target action:(SEL)action{
+    // TODO: implement
+    UIButton * btn = [UIButton buttonWithType:type];
+    [btn setBackgroundImage:[XDCommonTool createImageWithColor:[UIColor colorWithRed:0 green:255 blue:0 alpha:1]] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[XDCommonTool createImageWithColor:[UIColor colorWithRed:0 green:255 blue:255 alpha:1]] forState:UIControlStateHighlighted];
+    [btn.layer setCornerRadius:10];
+    [btn.layer setMasksToBounds:YES];
+    
+    [btn setTitle:@"Test" forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+
+//uiimageview
++(UIImageView *)newImageViewWithName:(NSString *)imageName
+{
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    return imageView;
+}
+
+//uitextfield
++ (UITextField *)newTextFieldWithStyle:(UITextBorderStyle)style   withPlaceHolder:(NSString *)placeHolderStr{
+    UITextField * tf = [[UITextField alloc] initWithFrame:CGRectZero];
+    [tf setBorderStyle:style];
+    tf.placeholder = placeHolderStr;
+    
+    return tf;
+}
+
+//动态label
++(UILabel *)newDyLabelWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width
+{
+    UILabel * label = [UILabel new];
+    label.text = text;
+    label.font = font;
+    
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    NSDictionary *attributes = @{NSFontAttributeName : label.font,
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    CGRect box = [label.text
+                  boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                  options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                  attributes:attributes context:nil];
+    
+    label.frame = box;
+    return label;
+}
+
++(UILabel *)newlabelWithTextColor:(UIColor*)color withTitle:(NSString*)title fontSize:(CGFloat)theSize
+{
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectZero];
+    [label setTextColor:color];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setFont:[UIFont systemFontOfSize:theSize]];
+    label.text = title;
+    return label;
+}
+//拉伸图片
++ (UIImage *)resizeImage:(NSString *)imageName
+{
+    UIImage *image = [UIImage imageNamed:imageName];
+    CGFloat imageW = image.size.width * 0.5;
+    CGFloat imageH = image.size.height * 0.5;
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(imageH, imageW, imageH, imageW) resizingMode:UIImageResizingModeTile];
+}
+
++ (UISlider *)newSlider
+{
+    UISlider * slider = [UISlider new];
+    [slider setThumbImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    return slider;
+}
+
+
+@end

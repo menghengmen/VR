@@ -1,0 +1,16 @@
+//
+//  saleManTableViewCell1.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface saleManTableViewCell1 : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *leftBackvIEW;
+@property (weak, nonatomic) IBOutlet UILabel *leftSaleNumber;
+@property (weak, nonatomic) IBOutlet UIView *rightBackView;
+
+@end

@@ -1,0 +1,13 @@
+//
+//  myOrderViewController.h
+//  XiongDaJinFu
+//
+//  Created by gary on 16/12/2.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "BaseViewController.h"
+
+@interface myOrderViewController : BaseViewController
+
+@end

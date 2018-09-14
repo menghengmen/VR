@@ -1,0 +1,17 @@
+//
+//  clientManagerViewController.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/8.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "BaseViewController.h"
+
+@interface clientManagerViewController : BaseViewController
+
+//用于区分业务员管理和客户管理
+@property   (nonatomic,copy)   NSString  * typeString;
+
+
+@end

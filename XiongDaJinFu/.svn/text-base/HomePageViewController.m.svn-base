@@ -1,0 +1,169 @@
+//
+//  ViewController.m
+//  XiongDaJinFu
+//
+//  Created by 码动 on 16/10/13.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "HomePageViewController.h"
+#import "SDCycleScrollView.h"
+#import "homeTableViewCell.h"
+
+@interface HomePageViewController ()<SDCycleScrollViewDelegate>
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
+
+//轮播图的图片
+@property(strong, nonatomic)NSArray * imagesURLStrings;
+
+@end
+
+@implementation HomePageViewController
+- (NSArray*)imagesURLStrings{
+
+    if (!_imagesURLStrings) {
+        _imagesURLStrings = [[NSArray alloc] init];
+    }
+
+    return _imagesURLStrings;
+
+}
+
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+   
+   
+    [self tableView];
+    [self initRefreshHeaderView];
+     
+    [self getData];
+   
+    [self setUpNewNai:nil Title:@"首页"];
+    [self setUpUI];
+
+}
+
+
+- (void)setUpUI{
+
+    self.imagesURLStrings = [NSArray arrayWithObjects:@"http://admin.blinroom.com/images/upload/city/120501.jpg",@"http://admin.blinroom.com/images/upload/city/121301.jpg",@"http://admin.blinroom.com/images/upload/city/122201.jpg", nil];
+    // **
+    // 网络加载 --- 创建带标题的图片轮播器
+    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREENWIDTH, (398+81)/2) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    self.cycleScrollView.mainView.scrollsToTop = NO;
+    _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    _cycleScrollView.currentPageDotColor = RGB(99, 222, 253); // 自定义分页控件小圆标颜色
+    //    [self.HomeTableView.tableHeaderView addSubview:_cycleScrollView];
+    //    _cycleScrollView.autoScrollTimeInterval = 1.0f;
+    // **
+    //    NSArray *picImages = @[@"placeholder", @"placeholder", @"placeholder"];
+    //    _cycleScrollView.picViewGroup = picImages;
+    //         --- 模拟加载延迟
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _cycleScrollView.imageURLStringsGroup = self.imagesURLStrings;
+        
+       // [self setupTableViewDelegate];
+    });
+    [self.tableView addSubview:self.cycleScrollView];
+
+
+
+
+
+
+}
+
+# pragma mark
+# pragma mark - UITableViewDataSource
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    homeTableViewCell  *  cell = [homeTableViewCell homeTableViewCellWithTableView:tableView];
+    cell.backgroundColor = [UIColor colorWithHexString:@"#f0f0f0"];
+    cell.imageView1.backgroundColor = [UIColor colorWithHexString:@"#ffffff"];
+    cell.imageView2.backgroundColor = [UIColor colorWithHexString:@"#ffffff"];
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    switch (indexPath.row) {
+        case 1:
+            [cell.titleImageBTn setBackgroundImage:[UIImage imageNamed:@"热卖新品"] forState:UIControlStateNormal];
+            cell.titleLabel.text = @"热卖新品";
+            break;
+        case 2:
+            [cell.titleImageBTn setBackgroundImage:[UIImage imageNamed:@"大坛系列"] forState:UIControlStateNormal];
+            cell.titleLabel.text = @"大坛系列";
+            break;
+        case 3:
+            [cell.titleImageBTn setBackgroundImage:[UIImage imageNamed:@"老酒系列"] forState:UIControlStateNormal];
+            cell.titleLabel.text = @"老名酒系列";
+            break;
+        case 4:
+            [cell.titleImageBTn setBackgroundImage:[UIImage imageNamed:@"年份原浆系列"] forState:UIControlStateNormal];
+            cell.titleLabel.text = @"年份原浆系列";
+            break;
+        default:
+            break;
+    }
+    
+    
+    return cell;
+   
+
+
+ 
+
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return (398+81)/2;
+
+}
+-(void)getData{
+    NSDictionary  * dict = @{@"lan":@"zh_cn"};
+
+ [[NetworkClient sharedClient] POST:@"http://www.blinroom.com/config/univ/list"dict:dict succeed:^(id data) {
+     NSLog(@"%@",data);
+ } failure:^(NSError *error) {
+     NSLog(@"%@",error);
+ }];
+
+//
+//    [[NetworkClient sharedClient] GET:URL_goodDetail dict:@{@"id":@"12"} succeed:^(id data) {
+//        NSLog(@"%@",data);
+//  } failure:^(NSError *error) {
+//      NSLog(@"%@",error);
+//
+//  }];
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+@end

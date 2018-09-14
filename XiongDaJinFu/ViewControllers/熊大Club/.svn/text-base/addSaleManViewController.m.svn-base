@@ -1,0 +1,88 @@
+//
+//  addSaleManViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/9.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "addSaleManViewController.h"
+#import "YJPersonInfoCell.h"
+@interface addSaleManViewController ()<YJPersonInfoCellDelegate>
+@property (nonatomic,strong)  NSMutableArray  * nameArray;
+@end
+
+@implementation addSaleManViewController
+- (NSMutableArray *)nameArray
+{
+    if (!_nameArray) {
+        NSMutableArray *a1 = [NSMutableArray arrayWithArray:@[@"* 账号",@"* 密码"]];
+        NSMutableArray *a2 = [NSMutableArray arrayWithArray:@[@"* 真实姓名",@"* 性别" ]];
+       
+        
+        NSArray *arr = @[a1, a2];
+        _nameArray = [NSMutableArray arrayWithArray:arr];
+    }
+    return _nameArray;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setUpNewNai:@"返回" Title:@"添加业务员"];
+
+}
+#pragma mark- UITableViewDataSource, UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    return self.nameArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.nameArray[section] count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    YJPersonInfoCell *cell = [YJPersonInfoCell personInfoCellWithTableView:tableView];
+    cell.delegate = self;
+    //cell左边的数据
+    NSArray *arr = self.nameArray[indexPath.section];
+    cell.name.text = arr[indexPath.row];
+    [cell.name setTextColor:[UIColor colorWithHexString:@"4d4d4d"]];
+    
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

@@ -1,0 +1,19 @@
+//
+//  Header.h
+//  XiongDaJinFu
+//
+//  Created by gary on 16/12/1.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+
+
+
+
+
+//全局
+#define   GlobalUrl @"http://114.55.224.151:9191"
+//商品类别列表
+#define    URL_goodList            (  GlobalUrl     "/item/getAllCategorys")
+//商品详情
+#define    URL_goodDetail            (  GlobalUrl     "/item/getItem")

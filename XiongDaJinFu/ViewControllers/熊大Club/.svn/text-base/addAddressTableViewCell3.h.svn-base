@@ -1,0 +1,15 @@
+//
+//  addAddressTableViewCell3.h
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface addAddressTableViewCell3 : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField3;
++ (instancetype)editAddressCell3WithTableView:(UITableView *)tableView;
+
+@end

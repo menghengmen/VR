@@ -1,0 +1,91 @@
+//
+//  saleManTableViewCell2.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/7.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "saleManTableViewCell2.h"
+
+@implementation saleManTableViewCell2
+
+- (YJItemView*)itemView{
+    if (_itemView) {
+        _itemView = [[YJItemView alloc] init];
+    }
+ 
+    return _itemView;
+
+}
+
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+
+    if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        UIView *bacView = [[UIView alloc] initWithFrame:self.bounds];
+        [self.contentView addSubview:bacView];
+    
+       
+       
+        
+        
+        
+        
+        YJItemView  * itemView = [[YJItemView alloc] initWithFrame:CGRectMake(5, 20, SCREENWIDTH-20, 60)];
+        itemView.nameArray = @[@"提成统计",@"分销商品",@"分销订单",@"客户管理"];
+        itemView.imageArray = @[[UIImage imageNamed:@"提成统计"], [UIImage imageNamed:@"分销商品库"], [UIImage imageNamed:@"分销订单"], [UIImage imageNamed:@"客户管理"]];
+   
+        itemView.delegate = self;
+        
+        self.itemView = itemView;
+        [bacView addSubview:itemView];
+   
+    
+        UIView  * bottomView = [[UIView alloc] init];
+        bottomView.backgroundColor = [UIColor colorWithHexString:@"#f0f0f0"];
+        [bacView addSubview:bottomView];
+        [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.mas_bottom);
+            make.width.equalTo(self.mas_width);
+            make.height.equalTo(@10);
+        }];
+        
+       
+    
+    
+    
+    
+    }
+
+
+    return self;
+}
+
+#pragma mark- saleManTableViewCell2Delegate
+- (void)itemViewBtnClickWithitemView:(YJItemView *)itemView tag:(NSInteger)tag name:(NSString *)buttonName{
+   
+    
+    if ([self.delegate respondsToSelector:@selector(itemViewBtnClicksaleManTableView:tag:name:)]) {
+        [self.delegate itemViewBtnClicksaleManTableView:self tag:tag name:buttonName];
+    }
+    
+    
+
+
+
+}
+
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

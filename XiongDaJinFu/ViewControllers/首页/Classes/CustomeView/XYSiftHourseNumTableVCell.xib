@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="XYSiftHourseNumTableVCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房间数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeP-xr-ZFY">
+                        <rect key="frame" x="15" y="11" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlT-kH-DGB" customClass="XYSiftButton">
+                        <rect key="frame" x="15" y="38.5" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="5B7-kH-1su"/>
+                            <constraint firstAttribute="height" constant="30" id="tBU-RV-aAC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="1间">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cwo-1c-tja"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="602" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-fO-PJj" customClass="XYSiftButton">
+                        <rect key="frame" x="127" y="38.5" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="3间">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ctc-f7-860"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="603" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BC-OO-aUV" customClass="XYSiftButton">
+                        <rect key="frame" x="183" y="38.5" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="4间">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iAA-cf-fcF"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="604" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-01-q0S" customClass="XYSiftButton">
+                        <rect key="frame" x="239" y="38.5" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="5间">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mY5-mF-5r5"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="605" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-0o-DGD" customClass="XYSiftButton">
+                        <rect key="frame" x="15" y="78" width="61" height="27"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="LEb-sa-gTD"/>
+                            <constraint firstAttribute="height" constant="27" id="S9N-nz-u73"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="5间以上">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cef-Nb-U2H"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="601" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rM-Go-oDB" customClass="XYSiftButton">
+                        <rect key="frame" x="71" y="38.5" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="2间">
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z7F-6K-Jck"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2BC-OO-aUV" firstAttribute="leading" secondItem="fEc-fO-PJj" secondAttribute="trailing" constant="10" id="2Bq-G6-Ioj"/>
+                    <constraint firstItem="8rM-Go-oDB" firstAttribute="height" secondItem="rlT-kH-DGB" secondAttribute="height" id="9a6-98-URL"/>
+                    <constraint firstItem="KRs-01-q0S" firstAttribute="width" secondItem="rlT-kH-DGB" secondAttribute="width" id="CP2-rl-GOu"/>
+                    <constraint firstItem="fEc-fO-PJj" firstAttribute="width" secondItem="rlT-kH-DGB" secondAttribute="width" id="HQi-0k-mbx"/>
+                    <constraint firstItem="fEc-fO-PJj" firstAttribute="leading" secondItem="8rM-Go-oDB" secondAttribute="trailing" constant="10" id="Hwf-gy-47H"/>
+                    <constraint firstItem="qeP-xr-ZFY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="JOA-qb-Yuc"/>
+                    <constraint firstItem="2BC-OO-aUV" firstAttribute="top" secondItem="rlT-kH-DGB" secondAttribute="top" id="M34-TI-Zpr"/>
+                    <constraint firstItem="KRs-01-q0S" firstAttribute="height" secondItem="rlT-kH-DGB" secondAttribute="height" id="NYy-Aj-8cz"/>
+                    <constraint firstItem="rlT-kH-DGB" firstAttribute="leading" secondItem="qeP-xr-ZFY" secondAttribute="leading" id="Np1-d0-Lt8"/>
+                    <constraint firstItem="qeP-xr-ZFY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Rl8-fO-7TY"/>
+                    <constraint firstItem="fEc-fO-PJj" firstAttribute="height" secondItem="rlT-kH-DGB" secondAttribute="height" id="bgY-qA-Bs3"/>
+                    <constraint firstItem="rlT-kH-DGB" firstAttribute="top" secondItem="qeP-xr-ZFY" secondAttribute="bottom" constant="11.5" id="c43-xy-uzN"/>
+                    <constraint firstItem="2BC-OO-aUV" firstAttribute="width" secondItem="rlT-kH-DGB" secondAttribute="width" id="eKl-wd-5fR"/>
+                    <constraint firstItem="KRs-01-q0S" firstAttribute="leading" secondItem="2BC-OO-aUV" secondAttribute="trailing" constant="10" id="fBj-I1-91i"/>
+                    <constraint firstItem="aWv-0o-DGD" firstAttribute="top" secondItem="rlT-kH-DGB" secondAttribute="bottom" constant="10" id="hQf-7i-gfp"/>
+                    <constraint firstItem="aWv-0o-DGD" firstAttribute="leading" secondItem="rlT-kH-DGB" secondAttribute="leading" id="iaP-Pf-3WY"/>
+                    <constraint firstItem="8rM-Go-oDB" firstAttribute="top" secondItem="rlT-kH-DGB" secondAttribute="top" id="k6v-gc-TKH"/>
+                    <constraint firstItem="8rM-Go-oDB" firstAttribute="width" secondItem="rlT-kH-DGB" secondAttribute="width" id="lAF-6H-wnL"/>
+                    <constraint firstItem="fEc-fO-PJj" firstAttribute="top" secondItem="rlT-kH-DGB" secondAttribute="top" id="nZJ-p9-ab6"/>
+                    <constraint firstItem="KRs-01-q0S" firstAttribute="top" secondItem="rlT-kH-DGB" secondAttribute="top" id="sUP-QI-nI8"/>
+                    <constraint firstItem="8rM-Go-oDB" firstAttribute="leading" secondItem="rlT-kH-DGB" secondAttribute="trailing" constant="10" id="v0b-gV-8yE"/>
+                    <constraint firstItem="2BC-OO-aUV" firstAttribute="height" secondItem="rlT-kH-DGB" secondAttribute="height" id="vYU-yh-HwS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn1" destination="rlT-kH-DGB" id="zaY-cH-XSg"/>
+                <outlet property="btn2" destination="8rM-Go-oDB" id="6SF-Le-KC4"/>
+                <outlet property="btn3" destination="fEc-fO-PJj" id="Cg7-w3-auf"/>
+                <outlet property="btn4" destination="2BC-OO-aUV" id="bI1-cQ-vkm"/>
+                <outlet property="btn5" destination="KRs-01-q0S" id="yGY-j5-sjd"/>
+                <outlet property="btn6" destination="aWv-0o-DGD" id="ifU-dj-L9j"/>
+            </connections>
+            <point key="canvasLocation" x="-49" y="79.5"/>
+        </tableViewCell>
+    </objects>
+</document>

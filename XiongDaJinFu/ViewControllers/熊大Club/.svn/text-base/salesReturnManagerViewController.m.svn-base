@@ -1,0 +1,63 @@
+//
+//  salesReturnManagerViewController.m
+//  XiongDaJinFu
+//
+//  Created by gary on 2016/12/6.
+//  Copyright © 2016年 digirun. All rights reserved.
+//
+
+#import "salesReturnManagerViewController.h"
+#import "salesReturnTableViewCell.h"
+#import "salesReturnTableViewCell.h"
+
+@interface salesReturnManagerViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    
+    UITableView  * salesReturnManagerTableView;
+    
+}
+
+
+
+@end
+
+@implementation salesReturnManagerViewController
+- (void)viewDidLoad{
+    
+    
+    [self setUpNewNai:@"返回" Title:@"退货管理"];
+    [self setUpUI];
+}
+
+- (void)setUpUI{
+    UITableView  * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64) ];
+    tableView.dataSource  = self;
+    tableView.delegate  = self;
+    tableView.rowHeight  = 44;
+    
+    [tableView registerNib:[UINib nibWithNibName:@"salesReturnTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.view addSubview:tableView];
+    salesReturnManagerTableView = tableView;
+    
+    
+    
+}
+# pragma mark
+# pragma mark - UITableViewDataSource
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    salesReturnTableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 200;
+    
+}
+
+@end
